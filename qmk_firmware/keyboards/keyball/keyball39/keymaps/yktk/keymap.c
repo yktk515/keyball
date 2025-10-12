@@ -98,7 +98,7 @@ const uint16_t PROGMEM my_keyz1[] = {KC_T, KC_K, COMBO_END};
 const uint16_t PROGMEM my_keyz2[] = {KC_COMM, KC_DOT, COMBO_END};
 
 combo_t key_combos[] = {
-    COMBO(my_keyz1, KC_GRV)
+    COMBO(my_keyz1, KC_GRV),
     COMBO(my_keyz2, KC_ESC)
 };
 #endif
