@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ),
   // Eucalyn base layer
   [0] = LAYOUT_universal(
-    KC_Q     , KC_W     , KC_MINS  , KC_COMM   , KC_DOT  ,                            KC_M     , KC_R     , KC_D     , KC_Y     , KC_P     ,
+    KC_Q     , KC_W     , KC_MINS  , KC_COMM  , KC_DOT   ,                            KC_M     , KC_R     , KC_D     , KC_Y     , KC_P     ,
     KC_A     , KC_O     , KC_E     , KC_I     , KC_U     ,                            KC_G     , KC_T     , KC_K     , KC_S     ,LT(1,KC_N),
     KC_Z     , KC_X     , KC_C     , KC_V     , KC_F     ,                            KC_B     , KC_H     , KC_J     , KC_L     , KC_SLSH  ,
     KC_TAB   , KC_LALT  , KC_LCTL  ,LSFT_T(KC_LNG2),KC_SPC,LT(2,KC_LNG1),LT(4,KC_BSPC),LT(3,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RCTL,KC_LGUI
@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   // symbol
   [3] = LAYOUT_universal(
-    KC_ESC   , KC_EXLM  , KC_HASH  , KC_DLR   , KC_RBRC  ,                             KC_NUHS  , KC_PERC  , KC_AMPR  , KC_CIRC  , KC_DEL   ,
-    KC_TILDE , KC_GRAVE , KC_QUOT  , KC_DQUO  , KC_LPRN  ,                           , KC_RPRN  , KC_AT    , KC_UNDS  , KC_COLN  , KC_SCLN  ,
-    KC_PLUS  , KC_ASTR  , KC_EQL   ,S(KC_COMM), KC_LCBR  ,                           , KC_RCBR  ,S(KC_DOT) , KC_PIPE  , KC_NUBS  ,S(KC_SLSH),
+    KC_ESC   , KC_EXLM  , KC_HASH  , KC_DLR   , KC_RBRC  ,                            KC_NUHS  , KC_PERC  , KC_AMPR  , KC_CIRC  , KC_DEL   ,
+    KC_TILDE , KC_GRAVE , KC_QUOT  , KC_DQUO  , KC_LPRN  ,                            KC_RPRN  , KC_AT    , KC_UNDS  , KC_COLN  , KC_SCLN  ,
+    KC_PLUS  , KC_ASTR  , KC_EQL   ,S(KC_COMM), KC_LCBR  ,                            KC_RCBR  ,S(KC_DOT) , KC_PIPE  , KC_NUBS  ,S(KC_SLSH),
     KC_CAPS  , KC_LALT  , KC_LCTL  , KC_LSFT  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , KC_RSFT
   ),
   // settings
@@ -78,7 +78,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
     keyball_set_scroll_mode(get_highest_layer(state) == 2);
     return state;
-
 }
 
 #ifdef OLED_ENABLE
