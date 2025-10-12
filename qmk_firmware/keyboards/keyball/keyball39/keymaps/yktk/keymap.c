@@ -23,12 +23,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
-  // [0] = LAYOUT_universal(
-  //   KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
-  //   KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_MINS  ,
-  //   KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
-  //   KC_TAB   , KC_LALT  , KC_LCTL  ,LSFT_T(KC_LNG2),LT(2,KC_SPC),LT(4,KC_LNG1),LT(5,KC_BSPC),LT(3,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI,LT(7,KC_LGUI)
-  // ),
   // Eucalyn base layer
   [0] = LAYOUT_universal(
     KC_Q     , KC_W     , KC_MINS  , KC_COMM  , KC_DOT   ,                            KC_M     , KC_R     , KC_D     , KC_Y     , KC_P     ,
@@ -52,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   // symbol
   [3] = LAYOUT_universal(
-    KC_ESC   , KC_EXLM  , KC_HASH  , KC_DLR   , KC_RBRC  ,                            KC_NUHS  , KC_PERC  , KC_AMPR  , KC_CIRC  , KC_DEL   ,
-    KC_TILDE , KC_GRAVE , KC_QUOT  , KC_DQUO  , KC_LPRN  ,                            KC_RPRN  , KC_AT    , KC_UNDS  , KC_COLN  , KC_SCLN  ,
-    KC_PLUS  , KC_ASTR  , KC_EQL   ,S(KC_COMM), KC_LCBR  ,                            KC_RCBR  ,S(KC_DOT) , KC_PIPE  , KC_NUBS  ,S(KC_SLSH),
+    KC_ESC   , KC_EXLM  , S(KC_3)  , KC_DLR   , KC_RBRC  ,                            KC_NUHS  , S(KC_5)  , S(KC_6)  , KC_EQL   , KC_DEL   ,
+    S(KC_EQL),S(KC_LBRC), S(KC_7)  , S(KC_2)  , S(KC_8)  ,                            S(KC_9)  , KC_LBRC  ,S(KC_INT1), KC_QUOT  , KC_SCLN  ,
+   S(KC_SCLN),S(KC_QUOT),S(KC_MINS),S(KC_COMM),S(KC_RCBR),                           S(KC_NUHS),S(KC_DOT) ,S(KC_INT3), KC_INT1  ,S(KC_SLSH),
     KC_CAPS  , KC_LALT  , KC_LCTL  , KC_LSFT  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , KC_RSFT
   ),
   // settings
@@ -93,11 +87,9 @@ void oledkit_render_info_user(void) {
 
 #ifdef COMBO_ENABLE
 // eucalyn combos
-//const uint16_t PROGMEM my_keyz1[] = {KC_T, KC_K, COMBO_END};
-const uint16_t PROGMEM my_keyz2[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM my_keyz1[] = {KC_COMM, KC_DOT, COMBO_END};
 
 combo_t key_combos[] = {
-    //COMBO(my_keyz1, KC_GRV),
-    COMBO(my_keyz2, KC_ESC)
+    COMBO(my_keyz1, KC_ESC)
 };
 #endif
