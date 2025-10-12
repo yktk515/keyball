@@ -29,54 +29,60 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //   KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
   //   KC_TAB   , KC_LALT  , KC_LCTL  ,LSFT_T(KC_LNG2),LT(2,KC_SPC),LT(4,KC_LNG1),LT(5,KC_BSPC),LT(3,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI,LT(7,KC_LGUI)
   // ),
-  // Eucalyn
+  // template
+  // [99] = LAYOUT_universal(
+  //   _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
+  //   _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
+  //   _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
+  //   _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
+  // ),
+  // Eucalyn base layer
   [0] = LAYOUT_universal(
     KC_Q     , KC_W     , KC_COMM  , KC_DOT   , KC_MINS  ,                            KC_M     , KC_R     , KC_D     , KC_Y     , KC_P     ,
-    KC_A     , KC_O     , KC_E     , KC_I     , KC_U     ,                            KC_G     , KC_T     , KC_K     , KC_S     , KC_N     ,
+    KC_A     , KC_O     , KC_E     , KC_I     , KC_U     ,                            KC_G     , KC_T     , KC_K     , KC_S     ,LT(2,KC_N),
     KC_Z     , KC_X     , KC_C     , KC_V     , KC_F     ,                            KC_B     , KC_H     , KC_J     , KC_L     , KC_SLSH  ,
-    KC_TAB   , KC_LALT  , KC_LCTL  ,LSFT_T(KC_LNG2),LT(2,KC_SPC),LT(4,KC_LNG1),LT(5,KC_BSPC),LT(3,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI,KC_LGUI
+    KC_TAB   , KC_LALT  , KC_LCTL  ,LSFT_T(KC_LNG2),LT(2,KC_SPC),LT(4,KC_LNG1),LT(5,KC_BSPC),LT(3,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RCTL,KC_LGUI
   ),
-  // gaming
+  // gaming base layer
   [1] = LAYOUT_universal(
     _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
     _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
     _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
     _______  , _______  , _______  , KC_LSFT  , KC_SPC   ,LT(6,KC_ESC),    _______  , _______  , _______  , _______  , _______  , TO(0)
   ),
-
+  // move/mouse
   [2] = LAYOUT_universal(
-    _______  , _______  , _______  , _______  , KC_RBRC  ,                            KC_DLR   , _______  , KC_BTN3  , _______  , _______  ,
-    _______  , KC_EXLM  , S(KC_6)  ,S(KC_INT3), S(KC_8)  ,                           S(KC_INT1), KC_BTN1  , KC_PGUP  , KC_BTN2  , KC_SCLN  ,
-    S(KC_EQL),S(KC_LBRC),S(KC_7)   , S(KC_2)  ,S(KC_RBRC),                            KC_LBRC  , KC_HOME  , KC_PGDN  , KC_END   , _______  ,
-    KC_INT1  , KC_EQL   , S(KC_3)  , _______  , _______  , _______  ,      TO(3)    , TO(0)    , _______  , KC_RALT  , KC_RGUI  , TO(0)
+    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , KC_UP    , MO(3)    , _______  ,
+    _______  , _______  , _______  , _______  , _______  ,                            _______  , KC_BTN1  , KC_BTN3  , KC_BTN2  , _______  ,
+    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , KC_DOWN  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
   ),
-
+  // number/mouse
   [3] = LAYOUT_universal(
     KC_ESC   , KC_1     , KC_2     , KC_3     , KC_MINS  ,                            KC_NUHS  , _______  , KC_BTN3  , _______  , KC_BSPC  ,
    S(KC_QUOT), KC_4     , KC_5     , KC_6     ,S(KC_SCLN),                            S(KC_9)  , KC_BTN1  , KC_UP    , KC_BTN2  , KC_QUOT  ,
     KC_SLSH  , KC_7     , KC_8     , KC_9     ,S(KC_MINS),                           S(KC_NUHS), KC_LEFT  , KC_DOWN  , KC_RGHT  , KC_RSFT  ,
-    KC_TAB   , KC_0     , KC_DOT   , KC_DEL   , KC_ENT   , KC_BSPC  ,      _______  , _______  , _______  , _______  , _______  , TO(0)
+    KC_TAB   , KC_0     , KC_DOT   , KC_DEL   , KC_ENT   , KC_BSPC  ,      _______  , _______  , _______  , _______  , _______  , _______
   ),
-
+  // symbol
   [4] = LAYOUT_universal(
-    RGB_TOG  , AML_TO   , AML_I50  , AML_D50  , _______  ,                            _______  , _______  , SSNP_HOR , SSNP_VRT , SSNP_FRE ,
-    RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , SCRL_DVI ,                            _______  , _______  , CM_ON    , CM_OFF   , CM_TOGG  ,
-    RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , SCRL_DVD ,                            CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE ,
-    QK_BOOT  , KBC_RST  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , KBC_RST  , TO(0)
+    _______  , KC_EXLM  , KC_HASH  , KC_DLR   , KC_RBRC  ,                             KC_NUHS  , KC_PERC  , KC_AMPR  , KC_CIRC  , _______  ,
+    KC_TILDE , KC_GRAVE , KC_QUOT  , KC_DQUO  , KC_LPRN  ,                           , KC_RPRN  , KC_AT    , KC_UNDS  , KC_COLN  , KC_SCLN  ,
+    KC_PLUS  , KC_ASTR  , KC_EQL   ,S(KC_COMM), KC_LCBR  ,                           , KC_RCBR  ,S(KC_DOT) , KC_PIPE  , KC_NUBS  ,S(KC_SLSH),
+    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
   ),
-
+  // function
   [5] = LAYOUT_universal(
-    KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                            _______  , _______  , _______  , KBC_RST  , QK_BOOT  ,
-    KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   ,                            _______  , _______  , CM_OFF   , CM_ON    , CM_TOGG  ,
+    KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                            CM_TOGG  , CM_OFF   , CM_ON    , _______  , QK_BOOT  ,
+    KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   ,                            Kb10     , AML_I50  , AML_D50  , _______  , KBC_RST  ,
     KC_F11   , KC_F12   , _______  , _______  , _______  ,                            TO(1)    , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , TO(0)
-  ),
-
+    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
+  // gaming FN/num
   [6] = LAYOUT_universal(
     KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                            KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   ,
     KC_1     , KC_2     , KC_3     , KC_4     , KC_5     ,                            KC_6     , KC_7     , KC_8     , KC_9     , KC_F11   ,
     _______  , KC_M     , KC_I     , _______  , _______  ,                            _______  , _______  , _______  , KC_0     , KC_F12   ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , TO(0)
+    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
   )
 };
 // clang-format on
@@ -85,6 +91,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
     keyball_set_scroll_mode(get_highest_layer(state) == 4);
     return state;
+
 }
 
 #ifdef OLED_ENABLE
